@@ -1,0 +1,24 @@
+<h2 class="page-header">Pesquisar Livro</h2>
+<form action="/livros" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Titulo</label>
+      <input type="text" name="title" value="<%= searchOptions.title %>">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-item">  
+      <label>Publicado Depois</label>
+      <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+    </div> 
+    <div class="form-item">
+      <label>Publicado Antes</label>
+      <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
+    </div>
+  </div>  
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary"type="submit">Pesquisar</button>
+  </div>  
+</form>
+<br>
+<%- include('../partials/bookGrid', { books: books, large: true }) %> 

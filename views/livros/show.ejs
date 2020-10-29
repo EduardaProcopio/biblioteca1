@@ -1,0 +1,16 @@
+<h2 class="page-header"><%= book.title %></h2>
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%= book.coverImagePath %>">
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary" href="/livros/<%= book.id %>/edit">Editar</a>
+            <%- include('../partials/deleteForm', { url: `/livros/${book.id}` }) %> 
+            <a class="btn btn-primary book-details-author-button" href="/autores/<%= book.author.id %>">Ver Autor</a>
+        </div>    
+    </div>
+<div class="book-details-grid">
+    <div class="book-details-label">Autor:</div><div><%= book.author.name %></div>
+    <div class="book-details-label">Data de Publicação:</div><div><%= book.publishDate.toLocaleDateString() %></div>  
+    <div class="book-details-label">Número de Páginas:</div><div><%= book.pageCount %> </div> 
+    <div class="book-details-label">Descrição:</div><div><%= book.description %> </div>   
+</div>    
